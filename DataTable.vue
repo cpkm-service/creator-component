@@ -16,6 +16,7 @@ const props = defineProps({
     selectedAbsolute: { type: Boolean, default: false },
     manualSearch: { type: Boolean, default: false },
     autoClear: { type: Boolean, default: false },
+    defaultExpandAll: { type: Boolean, default: false },
 })
 
 const page = usePage();
@@ -193,7 +194,7 @@ defineExpose({
         :row-key="getRowKey"
         :row-class-name="selectedHighlightClassFunc"
         :row-style="selectedHighlightStyleFunc"
-        :default-expand-all="false"
+        :default-expand-all="defaultExpandAll"
         @selection-change="handleSelectionChange"
         :highlight-current-row="selectedHighlight ? false : true"
     >
